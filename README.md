@@ -86,10 +86,10 @@ echo 'export PYTHONPATH=/usr/local/lib/python3/dist-packages/:$PYTHONPATH' >> ~/
 ### Install gr-gsm with Docker
 
 ```bash
+sudo xhost +local:docker
 docker pull atomicpowerman/imsi-catcher
 docker run -ti --net=host -e DISPLAY=$DISPLAY --privileged -v /dev/bus/usb:/dev/bus/usb  atomicpowerman/imsi-catcher bash
 ```
-TODO : fix DISPLAY error  
 Run all `grgsm_*` in this docker.   
   
 
@@ -190,7 +190,7 @@ Use `db-example.sql` to create your DB.
 cp .env.dist .env
 nano .env
 # set your config
-sudo apt instal python-decouple python3-mysqldb
+sudo apt install python-decouple python3-mysqldb
 ```
   
 ```bash
